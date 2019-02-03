@@ -1,5 +1,5 @@
 import express from "express";
-import create from "../controllers/todos";
+import { create, list } from "../controllers/todos";
 
 const router = express.Router();
 
@@ -8,6 +8,8 @@ router.get("/api", (req, res) =>
     message: "Welcome to the Todos API"
   })
 );
+
+router.get("/api/todos", list);
 
 router.post("/api/todos", create);
 
